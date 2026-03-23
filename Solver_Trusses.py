@@ -63,8 +63,8 @@ def ComputeNormalStresses(bars):
 def ComputeBucklingLoad(bars):
     for bar in bars:
         E = bar.E
-        I = bar.It
+        I = bar.Iu
         L = bar.Length()
 
-        bar.buckling_load = (np.pi**2*E*I)/(L**2)
+        bar.buckling_load = (np.pi**2*E*I)/((12*L)**2)
 
